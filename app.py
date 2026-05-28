@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# -----------------------------------
+
+# PAGE CONFIG
+
+# -----------------------------------
+
 st.set_page_config(
 page_title="Ovexa AI Intelligence",
 page_icon="🧠",
@@ -10,7 +16,7 @@ layout="wide"
 
 # -----------------------------------
 
-# PAGE WIDTH + GLOBAL STYLING
+# GLOBAL STYLING
 
 # -----------------------------------
 
@@ -37,7 +43,7 @@ section[data-testid="stSidebar"] {
     font-size: 42px;
     font-weight: 700;
     color: #0f172a;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
@@ -77,15 +83,15 @@ section[data-testid="stSidebar"] {
 
 .recommendation-priority {
     color: #8b5cf6;
-    font-weight: 700;
     font-size: 13px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .recommendation-title {
+    color: #0f172a;
     font-size: 24px;
     font-weight: 700;
-    color: #0f172a;
     margin-bottom: 10px;
 }
 
@@ -103,9 +109,9 @@ section[data-testid="stSidebar"] {
 }
 
 .section-title {
+    color: #0f172a;
     font-size: 28px;
     font-weight: 700;
-    color: #0f172a;
     margin-bottom: 20px;
 }
 
@@ -163,8 +169,8 @@ st.sidebar.markdown("""
 
 * Dashboard Overview
 * AI Recommendations
-* Calendar Intelligence
 * Recovery Trends
+* Calendar Intelligence
 * Behavioral Adaptation
 * AI Coaching
 * Settings
@@ -173,8 +179,10 @@ st.sidebar.markdown("""
 st.sidebar.divider()
 
 st.sidebar.markdown("### AI Recommendation Confidence")
+
 st.sidebar.progress(82)
-st.sidebar.caption("82% Confidence")
+
+st.sidebar.caption("Confidence Score: 82%")
 
 # -----------------------------------
 
@@ -195,14 +203,14 @@ recommendations = [
 {
 "priority": "HIGH IMPACT",
 "title": "Deep Work Window",
-"description": "Your recovery profile and historical focus patterns suggest that 9AM - 12PM is currently your strongest cognitive performance window."
+"description": "Your recovery profile and behavioral patterns suggest that 9AM - 12PM is currently your strongest cognitive performance window."
 },
 
 ```
 {
     "priority": "MODERATE PRIORITY",
     "title": "Reduce Meeting Density",
-    "description": "Energy stability is expected to decline slightly after 3PM. Consider avoiding stacked meetings during the late afternoon."
+    "description": "Energy stability is expected to decline slightly after 3PM. Consider reducing stacked meetings during the late afternoon."
 },
 
 {
@@ -218,7 +226,7 @@ reasoning = [
 "Recovery indicators improved by 11% compared to yesterday",
 "Sleep quality has remained stable for the past 3 days",
 "Morning calendar density is lower than average",
-"Historical productivity trends indicate stronger focus before noon",
+"Historical productivity patterns indicate stronger focus before noon",
 "Behavioral analysis shows improved cognitive performance after lighter evening schedules"
 ]
 
@@ -263,7 +271,7 @@ Ovexa AI Performance Intelligence </div>
 
 ```
 <div class='subtitle'>
-    AI-assisted scheduling and wellbeing recommendations powered by behavioral, wearable, and contextual signals.
+    AI-assisted scheduling and wellbeing recommendations powered by wearable, behavioral, and contextual signals.
 </div>
 """,
 unsafe_allow_html=True
@@ -296,6 +304,7 @@ with column:
     st.markdown(
         f"""
         <div class='metric-card'>
+
             <div class='metric-title'>
                 {title}
             </div>
@@ -303,6 +312,7 @@ with column:
             <div class='metric-value'>
                 {value}
             </div>
+
         </div>
         """,
         unsafe_allow_html=True
@@ -370,7 +380,7 @@ st.plotly_chart(
 
 left_column, right_column = st.columns([2, 1])
 
-# LEFT
+# LEFT SECTION
 
 with left_column:
 
@@ -404,7 +414,7 @@ for recommendation in recommendations:
     )
 ```
 
-# RIGHT
+# RIGHT SECTION
 
 with right_column:
 
@@ -418,7 +428,7 @@ st.markdown(
     """
     <div class='insight-box'>
 
-    Your recovery profile suggests strong cognitive performance this morning.
+    Your recovery profile suggests strong cognitive performance during the morning hours.
 
     <br><br>
 
